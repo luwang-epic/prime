@@ -6,6 +6,7 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import play.Application;
 import play.libs.Json;
@@ -23,7 +24,7 @@ import java.util.Map;
  */
 public class UserControllerTest {
 
-    private org.slf4j.Logger logger = LoggerFactory.getLogger(UserControllerTest.class);
+    private Logger logger = LoggerFactory.getLogger(UserControllerTest.class);
 
     private Application app = null;
 
@@ -38,7 +39,6 @@ public class UserControllerTest {
 
         logger.info("datasource name is ：" + ((HikariDataSource)JdbcUtil.dataSource).getJdbcUrl());
     }
-
 
     @After
     public void stopApp() throws Exception {
@@ -88,7 +88,7 @@ public class UserControllerTest {
     public void login(){
         Http.RequestBuilder request = Helpers.fakeRequest()
                 .method(Helpers.GET)
-                .uri("/prime/user/login?username=zhangsan&password=123456");
+                .uri("/prime/user/login?id=1");
 
         Result result = Helpers.route(app, request);
 

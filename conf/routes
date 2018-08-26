@@ -14,5 +14,6 @@ GET     /prime/test                 controllers.TestController.test
 
 # register user
 POST    /prime/user/register        controllers.UserController.register
+# update user alias
 POST    /prime/user/alias           controllers.UserController.updateAlias
 GET     /prime/user/login           controllers.UserController.login

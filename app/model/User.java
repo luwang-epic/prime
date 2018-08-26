@@ -13,7 +13,7 @@ public class User {
 
     public User(){}
 
-    public User(String username, String alias, String password){
+    public User(String username, String password, String alias){
         this.username = username;
         this.alias = alias;
         this.password = password;

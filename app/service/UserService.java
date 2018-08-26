@@ -3,6 +3,10 @@ package service;
 import dao.UserDao;
 import model.User;
 
+/**
+ * @author wanglu
+ * @date 2018/08/25
+ */
 public class UserService {
 
 

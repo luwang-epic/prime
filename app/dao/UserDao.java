@@ -1,7 +1,6 @@
 package dao;
 
 import model.User;
-import org.springframework.dao.DataAccessException;
 import utils.JdbcUtil;
 
 import java.util.HashMap;

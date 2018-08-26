@@ -28,7 +28,7 @@ libraryDependencies ++= Seq( javaJdbc , cache , javaWs )
 val mysqlVersion = "5.1.12"
 val jacksonVersion = "2.9.4"
 val springVersion = "4.1.1.RELEASE"
-
+val kafkaVersion = "0.10.1.1"
 val esVersion = "6.1.1"
 
 libraryDependencies ++= Seq(
@@ -45,7 +45,15 @@ libraryDependencies ++= Seq(
   "joda-time" % "joda-time" % "2.9.9",
   "junit" % "junit" % "4.12",
   "com.novocode" % "junit-interface" % "0.10" % "test",
-  "com.h2database" % "h2" % "1.4.192"
+  "com.h2database" % "h2" % "1.4.192",
+
+  //kafka dependency
+  //kafka core
+  "org.apache.kafka" % "kafka_2.11" % kafkaVersion exclude("org.slf4j", "slf4j-log4j12"),
+  //kafka client
+  "org.apache.kafka" % "kafka-clients" % kafkaVersion exclude("org.slf4j", "slf4j-log4j12"),
+  //kafka stream
+  "org.apache.kafka" % "kafka-streams" % kafkaVersion exclude("org.slf4j", "slf4j-log4j12")
 
 )
 

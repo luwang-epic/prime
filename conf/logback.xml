@@ -37,6 +37,11 @@
         <appender-ref ref ="INFO"/>
     </appender>
 
+    <appender name="KAFKA" class="log.KafkaAppender">
+        <topic>kafka-test</topic>
+        <brokerList>localhost:9092</brokerList>
+    </appender>
+
     <logger name="play" level="INFO" />
     <logger name="application" level="DEBUG" />
 
@@ -44,9 +49,11 @@
     <!-- https://hibernate.atlassian.net/browse/HV-1323 -->
     <logger name="org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator" level="ERROR" />
 
+
     <root level="INFO">
         <appender-ref ref="STDOUT" />
         <appender-ref ref="ASYNC" />
+        <appender-ref ref="KAFKA"/>
     </root>
 
 </configuration>
